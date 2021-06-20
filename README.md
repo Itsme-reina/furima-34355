@@ -18,7 +18,6 @@
 
 ### Association
 
-- has_many :comments
 - has_many :items
 - has_many :seller_buyer_items
 
