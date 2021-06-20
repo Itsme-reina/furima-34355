@@ -18,9 +18,9 @@
 
 ### Association
 
-- has_many :comment
+- has_many :comments
 - has_many :items
-- has_many :seller_items,buyers
+- has_many :seller_buyer_items
 
 
 ## items テーブル
@@ -32,7 +32,7 @@
 | category_id        | integer   | null: false |
 | item_condition_id  | integer   | null: false |
 | delivery_charge_id | integer   | null: false |
-| shipment_source_id | integer   | null: false |
+| prefecture_id      | integer   | null: false |
 | preparation_day_id | integer   | null: false |
 | price              | integer   | null: false |
 | user               |references | null: false, foreign_key: true |
@@ -41,7 +41,7 @@
 
 - belong_to :user
 - has_many  :comments
-- has_one   :seller_item,buyer
+- has_one   :seller_buyer_item
 
 
 ## comments テーブル
@@ -56,7 +56,7 @@
 - belong_to :item
 
 
-## seller_items,buyers テーブル
+## seller_buyer_items テーブル
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
@@ -75,14 +75,14 @@
 | Column            | Type       | Options     |
 | ----------------- | ---------- | ----------- |
 | postal_code       | string     | null: false |
-| prefecture        | integer    | null: false |
+| prefecture_id     | integer   | null: false |
 | municipality      | string     | null: false |
 | address           | string     | null: false |
 | building_name     | string     |
 | phone_number      | string     | null: false |
-| seller_item,buyer | references | null: false, foreign_key: true |
+| seller_buyer_item | references | null: false, foreign_key: true |
 
 
 ### Association
 
-- belong_to :seller_item,buyer
+- belong_to :seller_buyer_item
