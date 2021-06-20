@@ -19,8 +19,8 @@
 ### Association
 
 - has_many :comment
-- has_many :item
-- has_many :seller_item,buyer
+- has_many :items
+- has_many :seller_items,buyers
 
 
 ## items テーブル
@@ -40,7 +40,7 @@
 ### Association
 
 - belong_to :user
-- has_many  :comment
+- has_many  :comments
 - has_one   :seller_item,buyer
 
 
@@ -66,6 +66,7 @@
  ### Association
 
 - belong_to :item
+- belong_to :user
 - has_one : shipping_address
 
 
