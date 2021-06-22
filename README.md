@@ -38,9 +38,9 @@
 
 ### Association
 
-- belong_to :user
-- has_many  :comments
-- has_one   :seller_buyer_item
+- belongs_to :user
+- has_many   :comments
+- has_one    :seller_buyer_item
 
 
 ## comments テーブル
@@ -52,7 +52,7 @@
 
 ### Association
 
-- belong_to :item
+- belongs_to :item
 
 
 ## seller_buyer_items テーブル
@@ -64,9 +64,9 @@
 
  ### Association
 
-- belong_to :item
-- belong_to :user
-- has_one : shipping_address
+- belongs_to :item
+- belongs_to :user
+- has_one    : shipping_address
 
 
 ## shipping_addresses
@@ -84,4 +84,4 @@
 
 ### Association
 
-- belong_to :seller_buyer_item
+- belongs_to :seller_buyer_item
